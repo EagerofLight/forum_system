@@ -2,8 +2,8 @@ HELP.md
 .gradle
 build/
 !gradle/wrapper/gradle-wrapper.jar
-!**/src/main/**/build/
-!**/src/test/**/build/
+!forum-service/forum-core/src/main/**/build/
+!forum-service/forum-core/src/test/**/build/
 
 ### STS ###
 .apt_generated
@@ -14,8 +14,8 @@ build/
 .springBeans
 .sts4-cache
 bin/
-!**/src/main/**/bin/
-!**/src/test/**/bin/
+!forum-service/forum-core/src/main/**/bin/
+!forum-service/forum-core/src/test/**/bin/
 
 ### IntelliJ IDEA ###
 .idea
@@ -23,8 +23,8 @@ bin/
 *.iml
 *.ipr
 out/
-!**/src/main/**/out/
-!**/src/test/**/out/
+!forum-service/forum-core/src/main/**/out/
+!forum-service/forum-core/src/test/**/out/
 
 ### NetBeans ###
 /nbproject/private/
