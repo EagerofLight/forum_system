@@ -7,6 +7,16 @@ plugins {
 group = 'space.kordegi'
 version = '0.0.1-SNAPSHOT'
 
+ext {
+  set('springCloudVersion', "2021.0.2")
+}
+
+dependencyManagement {
+  imports {
+    mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+  }
+}
+
 java {
   sourceCompatibility = '17'
 }
@@ -19,10 +29,14 @@ configurations {
 
 repositories {
   mavenCentral()
+  maven { url 'https://repo.spring.io/milestone' }
+  maven { url 'https://repo.spring.io/snapshot' }
 }
 
 dependencies {
-  implementation "org.springdoc:springdoc-openapi-ui:1.6.9"
+  implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
+  implementation 'org.springframework.cloud:spring-cloud-starter-config'
+  implementation 'org.springdoc:springdoc-openapi-ui:1.6.9'
   implementation 'org.springframework.boot:spring-boot-starter-actuator'
   implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
   runtimeOnly 'com.h2database:h2'
