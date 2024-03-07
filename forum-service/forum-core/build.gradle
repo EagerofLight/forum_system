@@ -8,7 +8,7 @@ group = 'space.kordegi'
 version = '0.0.1-SNAPSHOT'
 
 ext {
-  set('springCloudVersion', "2021.0.2")
+  set('springCloudVersion', "2023.0.0")
 }
 
 dependencyManagement {

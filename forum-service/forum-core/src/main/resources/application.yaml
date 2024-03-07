@@ -8,3 +8,31 @@ spring:
       enabled: "ALWAYS"
   config:
     import: optional:configserver:http://localhost:8081/
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/ForumSystem
+    username: postgres
+    password: 123456
+
+
+server:
+  port: 8088
+
+logging:
+  level:
+    org.apache.ibatis: DEBUG
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+springdoc:
+  show-actuator: true
+  swagger-ui:
+  path: /swagger-ui.html
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8082/eureka/
+

@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: discovery-service
+  main:
+    banner-mode: "off"
+  output:
+    ansi:
+      enabled: "ALWAYS"
+  config:
+    import: optional:configserver:http://localhost:8081/
+
+server:
+  port: 8082
+eureka:
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://localhost:8082/eureka

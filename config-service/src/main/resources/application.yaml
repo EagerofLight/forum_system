@@ -5,4 +5,5 @@ spring:
     config:
       server:
         git:
-          uri: D:/projects/forum/service-configs/ #Path
+          uri: D:/projects/microservice/service-configs
+      default-label: master
