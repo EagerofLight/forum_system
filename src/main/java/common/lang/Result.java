@@ -1,22 +1,24 @@
 package common.lang;
 
+import common.exception.AppExceptionCodeMsg;
+
 /**
  * @author kordegi
  * @date 2024.03.06 11:02
  * @Description
  */
 public class Result<T> {
-    private String code;
+    private int code;
 
     private String message;
 
     private T data;
 
-    public String getCode() {
+    public int getCode() {
         return code;
     }
 
-    public void setCode(String code) {
+    public void setCode(int code) {
         this.code = code;
     }
 
@@ -36,35 +38,29 @@ public class Result<T> {
         this.data = data;
     }
 
-    public static <T> Result<T> succ(T data) {
-        Result<T> r = new Result<>();
-        r.setCode("200");
-        r.setData(data);
-        r.setMessage("Done successfully");
+    public static <T> Result succ(T data) {
+        Result r = new Result(200, "success", data);
         return r;
     }
 
-    public static <T> Result<T> succ(String message, T data) {
-        Result<T> r = new Result<>();
-        r.setCode("200");
-        r.setData(data);
-        r.setMessage(message);
+    public static <T> Result succ(String message, T data) {
+        Result r = new Result(200, message, data);
         return r;
     }
 
-    public static <T> Result<T> fail(String message) {
-        Result<T> r = new Result<>();
-        r.setCode("-1");
-        r.setData(null);
-        r.setMessage(message);
+    public static <T> Result fail(AppExceptionCodeMsg appExceptionCodeMsg) {
+        Result r = new Result(appExceptionCodeMsg.getCode(), appExceptionCodeMsg.getMessage(), null);
         return r;
     }
 
-    public static <T> Result<T> fail(String message, T data) {
-        Result<T> r = new Result<>();
-        r.setCode("-1");
-        r.setData(data);
-        r.setMessage(message);
+    public static <T> Result fail(int code, String message) {
+        Result r = new Result(code, message, null);
         return r;
+    }
+
+    public Result(int code, String message, T data) {
+        this.code = code;
+        this.message = message;
+        this.data = data;
     }
 }

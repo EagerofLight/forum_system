@@ -37,7 +37,7 @@ public class CommentController {
     @PostMapping("/add")
     public Result<String> addComment(@Validated Comment comment) {
         boolean flag = commentService.addComment(comment);
-        return flag ? Result.succ("Comment added successfully") : Result.fail("Comment add failed");
+        return flag ? Result.succ("Comment added successfully") : Result.fail(500,"Comment add failed");
     }
 
     @GetMapping("/getHotComments")
