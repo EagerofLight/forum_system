@@ -17,3 +17,9 @@ spring:
 logging:
   level:
     org.apache.ibatis: DEBUG
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
