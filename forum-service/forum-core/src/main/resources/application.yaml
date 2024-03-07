@@ -6,13 +6,6 @@ spring:
     url: jdbc:postgresql://localhost:5432/ForumSystem
     username: postgres
     password: 123456
-  data:
-    mongodb:
-      host: localhost
-      port: 27017
-      database: SystemLog
-      username: mongo
-      password: 123456
 
 logging:
   level:
@@ -23,3 +16,7 @@ management:
     web:
       exposure:
         include: '*'
+springdoc:
+  show-actuator: true
+  swagger-ui:
+  path: /swagger-ui.html
