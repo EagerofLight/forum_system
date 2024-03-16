@@ -1,24 +1,25 @@
 package space.kordegi.forumcore.entity;
 
-import java.time.LocalDateTime;
+import java.util.Date;
 import java.time.LocalTime;
 
 public class User {
   private Integer id;
-  private Integer state;
-  private Integer topicsCount;
-  private Integer commentsCount;
   private String name;
   private String email;
   private String location;
   private String bio;
   private String website;
   private String avatar;
+  private Integer state;
   private String password;
-  private LocalDateTime createdAt;
-  private LocalDateTime updatedAt;
-  private LocalDateTime currentSignInAt;
-  private LocalDateTime lastSignInAt;
+  private Date createdAt;
+  private Date updatedAt;
+  private Date currentSignInAt;
+  private Date lastSignInAt;
+  private Integer topicsCount;
+  private Integer commentsCount;
+  private String type;
 
   public Integer getId() {
     return id;
@@ -26,30 +27,6 @@ public class User {
 
   public void setId(Integer id) {
     this.id = id;
-  }
-
-  public Integer getState() {
-    return state;
-  }
-
-  public void setState(Integer state) {
-    this.state = state;
-  }
-
-  public Integer getTopicsCount() {
-    return topicsCount;
-  }
-
-  public void setTopicsCount(Integer topicsCount) {
-    this.topicsCount = topicsCount;
-  }
-
-  public Integer getCommentsCount() {
-    return commentsCount;
-  }
-
-  public void setCommentsCount(Integer commentsCount) {
-    this.commentsCount = commentsCount;
   }
 
   public String getName() {
@@ -100,6 +77,14 @@ public class User {
     this.avatar = avatar;
   }
 
+  public Integer getState() {
+    return state;
+  }
+
+  public void setState(Integer state) {
+    this.state = state;
+  }
+
   public String getPassword() {
     return password;
   }
@@ -108,53 +93,78 @@ public class User {
     this.password = password;
   }
 
-  public LocalDateTime getCreatedAt() {
+  public Date getCreatedAt() {
     return createdAt;
   }
 
-  public void setCreatedAt(LocalDateTime createdAt) {
+  public void setCreatedAt(Date createdAt) {
     this.createdAt = createdAt;
   }
 
-  public LocalDateTime getUpdatedAt() {
+  public Date getUpdatedAt() {
     return updatedAt;
   }
 
-  public void setUpdatedAt(LocalDateTime updatedAt) {
+  public void setUpdatedAt(Date updatedAt) {
     this.updatedAt = updatedAt;
   }
 
-  public LocalDateTime getCurrentSignInAt() {
+  public Date getCurrentSignInAt() {
     return currentSignInAt;
   }
 
-  public void setCurrentSignInAt(LocalDateTime currentSignInAt) {
+  public void setCurrentSignInAt(Date currentSignInAt) {
     this.currentSignInAt = currentSignInAt;
   }
 
-  public LocalDateTime getLastSignInAt() {
+  public Date getLastSignInAt() {
     return lastSignInAt;
   }
 
-  public void setLastSignInAt(LocalDateTime lastSignInAt) {
+  public void setLastSignInAt(Date lastSignInAt) {
     this.lastSignInAt = lastSignInAt;
   }
 
-  public User(Integer id, Integer state, Integer topicsCount, Integer commentsCount, String name, String email, String location, String bio, String website, String avatar, String password, LocalDateTime createdAt, LocalDateTime updatedAt, LocalDateTime currentSignInAt, LocalDateTime lastSignInAt) {
-    this.id = id;
-    this.state = state;
+  public Integer getTopicsCount() {
+    return topicsCount;
+  }
+
+  public void setTopicsCount(Integer topicsCount) {
     this.topicsCount = topicsCount;
+  }
+
+  public Integer getCommentsCount() {
+    return commentsCount;
+  }
+
+  public void setCommentsCount(Integer commentsCount) {
     this.commentsCount = commentsCount;
+  }
+
+  public String getType() {
+    return type;
+  }
+
+  public void setType(String type) {
+    this.type = type;
+  }
+
+  public User(Integer id, String name, String email, String location, String bio, String website, String avatar, Integer state, String password, Date createdAt, Date updatedAt, Date currentSignInAt, Date lastSignInAt, Integer topicsCount, Integer commentsCount, String type) {
+    this.id = id;
     this.name = name;
     this.email = email;
     this.location = location;
     this.bio = bio;
     this.website = website;
     this.avatar = avatar;
+    this.state = state;
     this.password = password;
     this.createdAt = createdAt;
     this.updatedAt = updatedAt;
     this.currentSignInAt = currentSignInAt;
     this.lastSignInAt = lastSignInAt;
+    this.topicsCount = topicsCount;
+    this.commentsCount = commentsCount;
+    this.type = type;
   }
 }

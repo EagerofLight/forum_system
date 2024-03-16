@@ -8,12 +8,12 @@ import space.kordegi.forumcore.entity.User;
 import space.kordegi.forumcore.service.UserService;
 
 @RestController
-@RequestMapping("/user")
+@RequestMapping("/User")
 public class UserController {
   @Resource
   private UserService userService;
 
-  @GetMapping("getUser")
+  @GetMapping("/getUser")
   public User getUser(){
     return userService.getUser();
   }
